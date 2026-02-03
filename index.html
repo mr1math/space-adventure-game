@@ -1,93 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 مغامرة الفضاء - Space Adventure</title>
-    <link rel="stylesheet" href="game-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Game Container -->
-    <div class="game-container">
-        <!-- Start Screen -->
-        <div id="startScreen" class="screen">
-            <div class="start-content">
-                <h1 class="game-title">🚀 مغامرة الفضاء</h1>
-                <p class="game-subtitle">احمِ كوكب الأرض من الكويكبات القادمة!</p>
-                <div class="instructions">
-                    <h3>📋 طريقة اللعب:</h3>
-                    <ul>
-                        <li>استخدم الأسهم ← → أو A/D لتحريك المركبة</li>
-                        <li>اضغط مسافة (Space) أو انقر للإطلاق</li>
-                        <li>دمر الكويكبات قبل أن تصل إلى الأرض</li>
-                        <li>كل كويكب = 10 نقاط</li>
-                        <li>لديك 3 أرواح - لا تضيعها!</li>
-                    </ul>
-                </div>
-                <button class="btn-start" onclick="startGame()">ابدأ اللعب</button>
-                <div class="high-score">
-                    <p>🏆 أعلى نقاط: <span id="highScoreDisplay">0</span></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Game Screen -->
-        <div id="gameScreen" class="screen hidden">
-            <div class="game-header">
-                <div class="score-display">
-                    <span class="label">النقاط:</span>
-                    <span id="score" class="value">0</span>
-                </div>
-                <div class="lives-display">
-                    <span class="label">الأرواح:</span>
-                    <span id="lives" class="hearts">❤️❤️❤️</span>
-                </div>
-                <div class="level-display">
-                    <span class="label">المستوى:</span>
-                    <span id="level" class="value">1</span>
-                </div>
-            </div>
-            
-            <canvas id="gameCanvas"></canvas>
-            
-            <div class="game-footer">
-                <button class="btn-pause" onclick="togglePause()">⏸️ إيقاف مؤقت</button>
-            </div>
-        </div>
-
-        <!-- Game Over Screen -->
-        <div id="gameOverScreen" class="screen hidden">
-            <div class="gameover-content">
-                <h1 class="gameover-title">💥 انتهت اللعبة!</h1>
-                <div class="final-stats">
-                    <p class="final-score">نقاطك النهائية: <span id="finalScore">0</span></p>
-                    <p class="final-level">وصلت للمستوى: <span id="finalLevel">1</span></p>
-                    <p id="newRecordMessage" class="new-record hidden">🎉 رقم قياسي جديد!</p>
-                </div>
-                <div class="gameover-buttons">
-                    <button class="btn-retry" onclick="restartGame()">🔄 العب مرة أخرى</button>
-                    <button class="btn-menu" onclick="backToMenu()">🏠 القائمة الرئيسية</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pause Screen -->
-        <div id="pauseScreen" class="screen hidden">
-            <div class="pause-content">
-                <h1 class="pause-title">⏸️ متوقف مؤقتاً</h1>
-                <p>اضغط ESC أو زر المتابعة للعودة</p>
-                <button class="btn-resume" onclick="togglePause()">▶️ متابعة اللعب</button>
-                <button class="btn-menu" onclick="quitToMenu()">🏠 الخروج للقائمة</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sound Toggle -->
-    <div class="sound-toggle">
-        <button id="soundBtn" onclick="toggleSound()">🔊</button>
-    </div>
-
-    <script src="game-script.js"></script>
-</body>
-</html>
